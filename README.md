@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+Необходимо реализовать страницу поиска сотрудников, с предпросмотром профиля.
+Приложение состоит из двух страниц, в sidebar осуществляется поиск и отображение результатов.
+На главной отображается карточка пользователя с личными данными.
+Готовый проект выложите на github.
+Учесть при выполнении ТЗ:
+Можно искать, как одного пользователя, так и нескольких (допустим Bret, 	Antonette).
+Поиск должен работать по полю id и полю username либо name, на ваше усмотрение.
+При выборе способа получения пользователя(пользователей) и фильтрации учитывать, что их может быть больше 2000 человек.
+При изменении состояния в sidebar, страница с профилем пользователя должна менять свое состояние, т.е если открыт профиль пользователя и потом решили удалить все из строки поиска, очищается список найденных пользователей, и страница отображения профиля возвращается в исходное состояние.
+Sidebar                                                                                                                                                            
+В строке поиска пользователя необходимо реализовать запрос к API для получения необходимых юзеров.
+В случае если результат вернул ошибку (параметры запроса неверные, либо ошибка сервера), необходимо отобразить эту ошибку пользователю.
+После успешно выполненного запроса, необходимо отобразить полученного пользователя или пользователей в интерфейсе.
+Макет
+Ссылка на макет
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ Шрифт
+В проекте используется шрифт Montserrat https://fonts.google.com/specimen/Montserrat
 
-## Available Scripts
+ Обязательно:
+ 1.SPA должно быть реализовано с использованием Vue/React.
+2.Необходимо создать основные компоненты.
+3.Использовать actions, mutations. 
+3.Стили должны быть написаны с помощью препроцессора Scss
+4.Во время всех запросов нужно сигнализировать пользователю через прелоадер, что происходит запрос.
+5.Использовать изоляцию стилей.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Документация API
+https://jsonplaceholder.typicode.com
+Пример запроса для одного пользователя по id:
+ https://jsonplaceholder.typicode.com/users?id=1
+ method: GET
+Пример запроса для нескольких пользователей по id:
+ https://jsonplaceholder.typicode.com/users?id=1&id=2
+ method: GET
